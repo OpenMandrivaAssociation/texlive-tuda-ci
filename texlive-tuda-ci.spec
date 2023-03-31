@@ -1,6 +1,6 @@
 Name:		texlive-tuda-ci
 Version:	64933
-Release:	1
+Release:	2
 Summary:	LaTeX templates of Technische Universitat Darmstadt
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/tuda-ci
