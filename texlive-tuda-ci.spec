@@ -1,5 +1,5 @@
 Name:		texlive-tuda-ci
-Version:	69351
+Version:	71696
 Release:	1
 Summary:	LaTeX templates of Technische Universitat Darmstadt
 Group:		Publishing
