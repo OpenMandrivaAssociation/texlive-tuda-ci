@@ -3,7 +3,7 @@ Version:	71696
 Release:	1
 Summary:	LaTeX templates of Technische Universitat Darmstadt
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/tuda-ci
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/tuda-ci
 License:	lppl1.3c
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/tuda-ci.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/tuda-ci.doc.r%{version}.tar.xz
