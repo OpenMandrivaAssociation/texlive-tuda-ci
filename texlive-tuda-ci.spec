@@ -1,39 +1,24 @@
-Name:		texlive-tuda-ci
-Version:	71696
-Release:	1
+%global tl_name tuda-ci
+%global tl_revision 79326
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	4.06
+Release:	%{tl_revision}.1
 Summary:	LaTeX templates of Technische Universitat Darmstadt
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/tuda-ci
 License:	lppl1.3c
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/tuda-ci.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/tuda-ci.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/tuda-ci.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/tuda-ci.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/tuda-ci.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The TUDa-CI-Bundle provides a possibility to use the Corporate
-Design of TU Darmstadt in LaTeX. It contains documentclasses as
-well as some helper packages and config files together with
-some templates for user documentation, which currently are only
-available in German.
+The TUDa-CI-Bundle provides a possibility to use the Corporate Design of
+TU Darmstadt in LaTeX. It contains documentclasses as well as some
+helper packages and config files together with some templates for user
+documentation, which currently are only available in German.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/tex/latex/tuda-ci
-%doc %{_texmfdistdir}/doc/latex/tuda-ci
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
